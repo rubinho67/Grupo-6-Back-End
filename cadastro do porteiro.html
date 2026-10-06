@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro do Porteiro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar para o menu
+        </a>
+
+        <header class="topo">
+            <h1>Cadastro do Porteiro</h1>
+            <p>Cadastro do responsável pelo controle da saída</p>
+        </header>
+
+        <main class="card">
+
+            <div class="card-header">
+                <h2>Dados do Porteiro</h2>
+                <p>Informe os dados do funcionário responsável pela portaria.</p>
+            </div>
+
+            <form id="formPorteiro">
+
+                <div class="form-grid">
+
+                    <div class="campo">
+                        <label for="idPorteiro">
+                            ID do porteiro
+                        </label>
+
+                        <input
+                            type="text"
+                            id="idPorteiro"
+                            placeholder="Ex.: POR001"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="nomePorteiro">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomePorteiro"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cargoPorteiro">
+                            Cargo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cargoPorteiro"
+                            value="Porteiro"
+                            readonly
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefonePorteiro">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefonePorteiro"
+                            placeholder="(00) 00000-0000"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="acoes">
+
+                    <a href="index.html" class="btn-secundario">
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn-principal">
+                        Cadastrar porteiro
+                    </button>
+
+                </div>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    <script>
+        document.getElementById("formPorteiro").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Porteiro cadastrado com sucesso!");
+
+        });
+    </script>
+
+</body>
+
+</html>
