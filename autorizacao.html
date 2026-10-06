@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Autorização do Professor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar para o menu
+        </a>
+
+        <header class="topo">
+            <h1>Autorização do Professor</h1>
+            <p>Verificação e autorização da saída do aluno</p>
+        </header>
+
+        <main class="card">
+
+            <div class="card-header">
+                <h2>Documento de Liberação</h2>
+                <p>Confira os dados antes de autorizar.</p>
+            </div>
+
+            <div class="documento">
+
+                <h3>Liberação nº DL-0001</h3>
+
+                <div class="documento-linha">
+                    <strong>Matrícula:</strong>
+                    <span>202600123</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Aluno:</strong>
+                    <span>João da Silva</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Turma:</strong>
+                    <span>8º Ano A</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Motivo:</strong>
+                    <span>Saída antecipada</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Data:</strong>
+                    <span>06/10/2026</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Status:</strong>
+
+                    <span
+                        id="status"
+                        class="status pendente">
+                        PENDENTE
+                    </span>
+
+                </div>
+
+                <div class="assinatura">
+
+                    <p>
+                        <strong>Professor responsável:</strong>
+                        Prof. Carlos Mendes
+                    </p>
+
+                    <p>
+                        <strong>Disciplina:</strong>
+                        Matemática
+                    </p>
+
+                    <div class="linha-assinatura"></div>
+
+                    <p>
+                        Assinatura do professor
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="acoes">
+
+                <button
+                    type="button"
+                    class="btn-recusar"
+                    onclick="recusar()">
+
+                    Recusar autorização
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-principal"
+                    onclick="autorizar()">
+
+                    Autorizar saída
+
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+
+        function autorizar() {
+
+            const status = document.getElementById("status");
+
+            status.textContent = "AUTORIZADO";
+
+            status.className = "status autorizado";
+
+            alert("Saída autorizada pelo professor!");
+
+        }
+
+
+        function recusar() {
+
+            const status = document.getElementById("status");
+
+            status.textContent = "RECUSADO";
+
+            status.className = "status recusado";
+
+            alert("Saída recusada pelo professor!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
