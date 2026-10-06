@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro do Professor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar para o menu
+        </a>
+
+        <header class="topo">
+            <h1>Cadastro do Professor</h1>
+            <p>Cadastro dos professores responsáveis pelas autorizações</p>
+        </header>
+
+        <main class="card">
+
+            <div class="card-header">
+                <h2>Dados do Professor</h2>
+                <p>Informe os dados do professor.</p>
+            </div>
+
+            <form id="formProfessor">
+
+                <div class="form-grid">
+
+                    <div class="campo">
+                        <label for="idProfessor">
+                            ID do professor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="idProfessor"
+                            placeholder="Ex.: PROF001"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="nomeProfessor">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomeProfessor"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="disciplina">
+                            Disciplina
+                        </label>
+
+                        <input
+                            type="text"
+                            id="disciplina"
+                            placeholder="Ex.: Matemática"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="turmaProfessor">
+                            Turma
+                        </label>
+
+                        <input
+                            type="text"
+                            id="turmaProfessor"
+                            placeholder="Ex.: 8º Ano A"
+                        >
+                    </div>
+
+                    <div class="campo campo-grande">
+                        <label for="emailProfessor">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="emailProfessor"
+                            placeholder="professor@email.com"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="acoes">
+
+                    <a href="index.html" class="btn-secundario">
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn-principal">
+                        Cadastrar professor
+                    </button>
+
+                </div>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    <script>
+        document.getElementById("formProfessor").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Professor cadastrado com sucesso!");
+
+        });
+    </script>
+
+</body>
+
+</html>
