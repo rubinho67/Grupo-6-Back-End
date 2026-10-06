@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emissão da Liberação</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar para o menu
+        </a>
+
+        <header class="topo">
+            <h1>Emissão da Liberação</h1>
+            <p>Emissão do documento para saída do aluno</p>
+        </header>
+
+        <main class="card">
+
+            <div class="card-header">
+                <h2>Dados da Liberação</h2>
+                <p>Preencha as informações necessárias para emitir a liberação.</p>
+            </div>
+
+            <form id="formLiberacao">
+
+                <div class="form-grid">
+
+                    <div class="campo">
+                        <label for="aluno">
+                            Aluno
+                        </label>
+
+                        <select id="aluno" required>
+                            <option value="">Selecione o aluno</option>
+                            <option value="202600123">
+                                João da Silva - 202600123
+                            </option>
+                            <option value="202600124">
+                                Maria Souza - 202600124
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="atendente">
+                            Atendente da secretaria
+                        </label>
+
+                        <select id="atendente" required>
+                            <option value="">Selecione o atendente</option>
+                            <option value="SEC001">
+                                Ana Paula - SEC001
+                            </option>
+                            <option value="SEC002">
+                                Carlos Oliveira - SEC002
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dataEmissao">
+                            Data da emissão
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dataEmissao"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status">
+                            <option value="Pendente">
+                                Pendente
+                            </option>
+
+                            <option value="Em análise">
+                                Em análise
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-grande">
+                        <label for="motivo">
+                            Motivo da saída
+                        </label>
+
+                        <textarea
+                            id="motivo"
+                            placeholder="Informe o motivo da saída antecipada..."
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <div class="informacao">
+                    <strong>Importante:</strong>
+                    após a emissão, o documento deverá passar pela autorização do professor.
+                </div>
+
+                <div class="acoes">
+
+                    <a href="index.html" class="btn-secundario">
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn-principal">
+                        Emitir liberação
+                    </button>
+
+                </div>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    <script>
+
+        const dataAtual = new Date();
+
+        const ano = dataAtual.getFullYear();
+
+        const mes = String(dataAtual.getMonth() + 1).padStart(2, "0");
+
+        const dia = String(dataAtual.getDate()).padStart(2, "0");
+
+        document.getElementById("dataEmissao").value =
+            `${ano}-${mes}-${dia}`;
+
+
+        document.getElementById("formLiberacao").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Liberação emitida com sucesso!");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
