@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorização do Porteiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Botão de voltar -->
+        <a href="Index.html" class="btn-voltar">
+            ← Voltar para o menu
+        </a>
+
+        <!-- Cabeçalho -->
+        <header class="topo">
+            <h1>Autorização de Saída</h1>
+            <p>Conferência final realizada pelo porteiro</p>
+        </header>
+
+        <main class="card">
+
+            <!-- Título da conferência -->
+            <div class="card-header">
+                <h2>Conferência da Liberação</h2>
+                <p>Verifique os dados antes de liberar a saída do aluno.</p>
+            </div>
+
+            <!-- Informações do documento -->
+            <div class="documento">
+                <h3>Documento nº DL-0001</h3>
+
+                <div class="documento-linha">
+                    <strong>Aluno:</strong>
+                    <span>João da Silva</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Matrícula:</strong>
+                    <span>202600123</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Turma:</strong>
+                    <span>8º Ano A</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Professor:</strong>
+                    <span>Prof. Carlos Mendes</span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Autorização do professor:</strong>
+                    <span class="status autorizado">
+                        AUTORIZADO
+                    </span>
+                </div>
+
+                <div class="documento-linha">
+                    <strong>Status da saída:</strong>
+                    <span id="statusSaida" class="status pendente">
+                        AGUARDANDO
+                    </span>
+                </div>
+            </div>
+
+            <!-- Confirmações do porteiro -->
+            <div class="confirmacao">
+
+                <div class="check">
+                    <input type="checkbox" id="confirmacaoDocumento">
+                    <label for="confirmacaoDocumento">
+                        Confirmei o documento de liberação.
+                    </label>
+                </div>
+
+                <div class="check">
+                    <input type="checkbox" id="confirmacaoProfessor">
+                    <label for="confirmacaoProfessor">
+                        Confirmei a autorização do professor.
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="acoes">
+                <button type="button"
+                        class="btn-recusar"
+                        onclick="naoLiberar()">
+                    Não liberar
+                </button>
+
+                <button type="button"
+                        class="btn-principal"
+                        onclick="autorizarSaida()">
+                    Autorizar saída
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Função para autorizar a saída
+        function autorizarSaida() {
+
+            const documento = document.getElementById("confirmacaoDocumento");
+            const professor = document.getElementById("confirmacaoProfessor");
+
+            // Verifica se as duas confirmações foram marcadas
+            if (!documento.checked || !professor.checked) {
+                alert("Confirme as duas informações antes de autorizar a saída.");
+                return;
+            }
+
+            // Atualiza o status da saída
+            const status = document.getElementById("statusSaida");
+
+            status.textContent = "SAÍDA AUTORIZADA";
+            status.className = "status autorizado";
+
+            alert("Saída do aluno autorizada!");
+        }
+
+        // Função para não autorizar a saída
+        function naoLiberar() {
+
+            const status = document.getElementById("statusSaida");
+
+            status.textContent = "NÃO AUTORIZADA";
+            status.className = "status recusado";
+
+            alert("A saída do aluno não foi autorizada.");
+        }
+
+    </script>
+
+</body>
+</html>
